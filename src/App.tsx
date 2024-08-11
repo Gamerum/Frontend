@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Header from './layout/Header';
 
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen ">
-      <Link to={'/deneme'} className="text-3xl text-main-500">
-        Welcomes
-      </Link>
+    <div className="bg-main-800 min-h-screen">
+      <Header />
+      <div className="container"></div>
     </div>
   );
 }
