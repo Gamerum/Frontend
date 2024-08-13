@@ -22,10 +22,7 @@ function Header() {
             />
           </Link>
         </div>
-        <div
-          onClick={toggleMobileMenu}
-          className="p-2 border rounded-md text-main-550/50 border-main-550/50 hover:text-main-550 hover:border-main-550 duration-300 transition ease-in-out"
-        >
+        <div onClick={toggleMobileMenu} className="button-primary">
           {!isMobileMenu ? (
             <>
               <MdDehaze

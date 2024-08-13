@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .button-primary {
+    @apply p-2 border rounded-md text-main-550/50 border-main-550/50 hover:text-main-550 hover:border-main-550 duration-300 transition ease-in-out;
+  }
+}
