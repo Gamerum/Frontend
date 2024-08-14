@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CiSearch } from 'react-icons/ci';
+import { InputText } from 'primereact/inputtext';
 
 function Search() {
-  return <div>Search</div>;
+  const [value, setValue] = useState('');
+  console.log('value >>', value);
+  return (
+    <div className="w-max-lg bg-main-800 text-main-250 border border-main-250 rounded-full">
+      <div className="flex items-center space-x-2 p-1">
+        <CiSearch
+          className="flex-shrink-0 h-6 w-6 text-main-250"
+          height={24}
+          width={24}
+        />
+
+        <InputText
+          className="bg-transparent "
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="Search"
+        />
+      </div>
+    </div>
+  );
 }
 
 export default Search;
