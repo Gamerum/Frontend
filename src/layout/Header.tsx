@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { CiSearch, CiMenuBurger, CiCircleChevLeft } from 'react-icons/ci';
@@ -9,6 +9,20 @@ import Notification from '../components/Notification';
 
 function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 768);
+      if (window.innerWidth >= 768) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <header className="relative z-50 bg-transparent py-1 border-b border-main-100/20">
@@ -33,9 +47,11 @@ function Header() {
               </Link>
             </div>
 
-            <div className="flex-grow max-w-fit md:max-w-xl lg:max-w-3xl hidden md:block">
-              <Search />
-            </div>
+            {!isSmallScreen && (
+              <div className="flex-grow max-w-fit md:max-w-xl lg:max-w-3xl hidden md:block">
+                <Search />
+              </div>
+            )}
 
             <div className="flex items-center space-x-2">
               <button
@@ -49,7 +65,7 @@ function Header() {
             </div>
           </>
         ) : (
-          <div className="flex items-center justify-between w-full space-x-2  py-4">
+          <div className="flex items-center justify-between w-full space-x-2 py-4">
             <button
               onClick={() => setIsSearchOpen(false)}
               className="text-main-250 hover:text-main-550 transition ease-in-out duration-300"
