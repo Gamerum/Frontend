@@ -15,7 +15,7 @@ function Search() {
         />
 
         <InputText
-          className="bg-transparent focus:ring-0 focus:outline-none"
+          className="bg-transparent focus:ring-0 w-full focus:outline-none"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Search"
