@@ -6,8 +6,8 @@ function Search() {
   const [value, setValue] = useState('');
   console.log('value >>', value);
   return (
-    <div className="w-max-lg bg-main-800 text-main-250 border border-main-250 rounded-full">
-      <div className="flex items-center space-x-2 p-1">
+    <div className="group w-full bg-main-800 text-main-250 border border-main-250 rounded-full focus-within:border-blue-500">
+      <div className="flex items-center space-x-1 p-1.5">
         <CiSearch
           className="flex-shrink-0 h-6 w-6 text-main-250"
           height={24}
@@ -15,7 +15,7 @@ function Search() {
         />
 
         <InputText
-          className="bg-transparent "
+          className="bg-transparent focus:ring-0 focus:outline-none"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Search"

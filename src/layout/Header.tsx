@@ -4,12 +4,13 @@ import logo from '../assets/logo.png';
 import { MdDehaze } from 'react-icons/md';
 import Search from '../components/Search';
 import Profile from '../components/Profile';
+import Notification from '../components/Notification';
 
 function Header() {
   return (
     <header className="relative z-50 bg-transparent py-1 border-b border-main-100/20">
       <div className="container flex select-none items-center justify-between">
-        <div className="flex items-center space-x-3">
+        <div className="flex w-max items-center space-x-3">
           <button>
             <MdDehaze
               className="flex-shrink-0 h-6 w-6 text-main-250"
@@ -26,11 +27,12 @@ function Header() {
             />
           </Link>
         </div>
-        <div className="">
+        <div className="flex-grow max-w-xl">
           <Search />
         </div>
 
-        <div>
+        <div className="flex items-center space-x-2">
+          <Notification />
           <Profile />
         </div>
       </div>
