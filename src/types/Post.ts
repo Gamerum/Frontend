@@ -1,3 +1,5 @@
+import default_profile_picture from '../assets/default_profile_picture.jpg';
+
 interface Writer {
   id: number;
   profilePhoto: string;
@@ -41,7 +43,7 @@ export interface PostCardProps {
 // Default values
 const defaultWriter: Writer = {
   id: 0,
-  profilePhoto: '',
+  profilePhoto: default_profile_picture,
   nickname: 'Unknown',
 };
 

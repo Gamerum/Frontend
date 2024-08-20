@@ -22,7 +22,7 @@ export function getCommunityUrl(communityId: number): string {
  * @param profileId - The ID of the profile for which to generate the URL.
  * @returns The URL string for the specific profile page.
  */
-export function getUserProfileUrl(userId: number): string {
+export function getProfileUrl(userId: number): string {
   return `/profile/${userId}`;
 }
 

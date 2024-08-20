@@ -4,11 +4,20 @@ import { PostCardBodyProps } from '../../types/Post';
 
 const PostCardBody: React.FC<PostCardBodyProps> = ({ id, title, image }) => {
   return (
-    <div className="post-body">
-      <a href={getPostUrl(id)} className="post-title-link">
-        <h2 className="post-title">{title}</h2>
+    <div className="post-body p-4">
+      <a
+        href={getPostUrl(id)}
+        className="block text-lg font-bold text-white mb-2"
+      >
+        {title}
       </a>
-      {image && <img src={image} alt="Post" className="post-image" />}
+      {image && (
+        <img
+          src={image}
+          alt="Post"
+          className="w-full h-auto max-h-96 object-cover mb-2"
+        />
+      )}
     </div>
   );
 };

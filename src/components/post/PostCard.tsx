@@ -8,32 +8,26 @@ import PostCardFooter from './PostCardFooter';
 
 const PostCard: React.FC<PostCardProps> = (props) => {
   const propsWithDefaults = { ...defaultPostCardProps, ...props };
-  const {
-    id,
-    title,
-    image,
-    commentCount,
-    likeCount,
-    writer,
-    community,
-    createdAt,
-  } = propsWithDefaults;
 
-  const timePassed = calculateTimePassed(createdAt);
+  const timePassed = calculateTimePassed(propsWithDefaults.createdAt);
   return (
-    <div className="p-card post-card">
+    <div className="p-card post-card bg-zinc-900">
       <PostCardHeader
-        writer={writer}
-        community={community}
+        writer={propsWithDefaults.writer}
+        community={propsWithDefaults.community}
         timePassed={timePassed}
       />
       <Divider />
-      <PostCardBody id={id} title={title} image={image} />
+      <PostCardBody
+        id={propsWithDefaults.id}
+        title={propsWithDefaults.title}
+        image={propsWithDefaults.image}
+      />
       <Divider />
       <PostCardFooter
-        id={id}
-        commentCount={commentCount}
-        likeCount={likeCount}
+        id={propsWithDefaults.id}
+        commentCount={propsWithDefaults.commentCount}
+        likeCount={propsWithDefaults.likeCount}
       />
     </div>
   );
