@@ -11,7 +11,7 @@ const PostCard: React.FC<PostCardProps> = (props) => {
 
   const timePassed = calculateTimePassed(propsWithDefaults.createdAt);
   return (
-    <div className="p-card post-card bg-zinc-900">
+    <div className="p-card post-card bg-zinc-900 p-4 shadow mb-4">
       <PostCardHeader
         writer={propsWithDefaults.writer}
         community={propsWithDefaults.community}
