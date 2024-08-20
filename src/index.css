@@ -7,3 +7,14 @@
     @apply p-2 border rounded-md text-main-550/50 border-main-550/50 hover:text-main-550 hover:border-main-550 duration-300 transition ease-in-out;
   }
 }
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

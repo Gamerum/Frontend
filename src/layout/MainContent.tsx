@@ -11,7 +11,9 @@ const MainContent: React.FC = () => {
 
   return (
     <main className="flex-grow p-4">
-      <PostCardContainer postCards={posts} />
+      <div className="h-full overflow-y-auto scrollbar-hide">
+        <PostCardContainer postCards={posts} />
+      </div>
     </main>
   );
 };

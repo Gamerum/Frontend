@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="h-screen flex flex-col bg-main-800 min-h-screen">
       <Header />
-      <div className="flex flex-grow">
+      <div className="flex flex-grow overflow-hidden">
         <LeftSidebar />
         <MainContent />
         <RightSidebar />
