@@ -18,7 +18,6 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
 
   return (
     <div className="post-footer flex justify-between items-center p-4">
-      {/* Footer left */}
       <div className="footer-left flex items-center"></div>
       <div className="footer-right flex items-center">
         <Button

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Avatar } from 'primereact/avatar';
-import { Tag } from 'primereact/tag';
 import { getCommunityUrl, getProfileUrl } from '../../utils/urlUtils';
 import { PostCardHeaderProps } from '../../types/Post';
+import { Link } from 'react-router-dom';
 
 const PostCardHeader: React.FC<PostCardHeaderProps> = ({
   writer,
@@ -11,7 +11,6 @@ const PostCardHeader: React.FC<PostCardHeaderProps> = ({
 }) => {
   return (
     <div className="post-header flex justify-between items-center p-4">
-      {/* Profile info */}
       <div className="profile-info flex items-center">
         <Avatar
           image={writer.profilePhoto}
@@ -20,17 +19,17 @@ const PostCardHeader: React.FC<PostCardHeaderProps> = ({
           className="mr-2"
         />
         <div className="text-sm font-semibold text-white mr-2">
-          <a href={getProfileUrl(writer.id)}>{writer.nickname}</a>
+          <Link to={getProfileUrl(writer.id)}>{writer.nickname}</Link>
         </div>
         <div className="text-gray-500 mr-2">•</div>
         <div className="text-gray-500 text-sm">{timePassed}</div>
       </div>
-      <a
+      <Link
         className="text-sm font-bold text-blue-600"
-        href={getCommunityUrl(community.id)}
+        to={getCommunityUrl(community.id)}
       >
         {community.title}
-      </a>
+      </Link>
     </div>
   );
 };

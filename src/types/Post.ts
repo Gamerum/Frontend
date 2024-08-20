@@ -40,6 +40,10 @@ export interface PostCardProps {
   createdAt: number;
 }
 
+export interface PostCardContainerProps {
+  postCards: PostCardProps[];
+}
+
 // Default values
 const defaultWriter: Writer = {
   id: 0,
