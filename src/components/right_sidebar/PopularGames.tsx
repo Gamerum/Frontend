@@ -6,7 +6,7 @@ const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
   return (
     <div className="popular-games mb-4">
       <h2 className="text-xl font-bold mb-5 text-white">Popular Games</h2>
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 shadow-xl">
         {popularGames.map((game) => (
           <div key={game.id} className="relative w-32 h-40 group">
             <Card
