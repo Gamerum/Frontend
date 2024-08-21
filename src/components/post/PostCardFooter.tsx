@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getPostUrl } from '../../utils/urlUtils';
 import { PostCardFooterProps } from '../../types/Post';
 import { formatNumber } from '../../utils/numberFormatter';
+import { Button } from 'primereact/button';
 import { Link } from 'react-router-dom';
 
 const PostCardFooter: React.FC<PostCardFooterProps> = ({
@@ -11,25 +12,29 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
   likeCount,
 }) => {
   const navigate = useNavigate();
-
-  const handleCommentClick = () => {
-    navigate(getPostUrl(id));
-  };
-
   return (
     <div className="post-footer flex justify-between items-center p-4">
       <div className="footer-left flex items-center"></div>
       <div className="footer-right flex items-center">
-        <i className="pi pi-share-alt text-blue-600 mr-4" aria-label="Share" />
-        <Link
-          to={getPostUrl(id)}
-          className="pi pi-comment text-blue-600 mr-2"
-          onClick={handleCommentClick}
+        <Button
+          icon="pi pi-share-alt"
+          className="p-button-text text-blue-600 mr-3 focus:outline-none focus:ring-0"
+          aria-label="Share"
         />
-        <span className="text-gray-500 text-sm mr-4">
+        <Button
+          icon="pi pi-comment"
+          className="p-button-text text-blue-600 mr-3 focus:outline-none focus:ring-0"
+          aria-label="Comment"
+          onClick={() => navigate(getPostUrl(id))}
+        />
+        <span className="text-gray-500 text-sm">
           {formatNumber(commentCount)}
         </span>
-        <i className="pi pi-thumbs-up text-blue-600 mr-2" aria-label="Like" />
+        <Button
+          icon="pi pi-thumbs-up"
+          className="p-button-text text-blue-600 ml-2 focus:outline-none focus:ring-0"
+          aria-label="Like"
+        />
         <span className="text-gray-500 text-sm">{formatNumber(likeCount)}</span>
       </div>
     </div>

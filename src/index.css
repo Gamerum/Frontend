@@ -18,3 +18,11 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.p-button-text .pi {
+  transition: filter 0.3s ease;
+}
+
+.p-button-text:hover .pi {
+  filter: brightness(2);
+}
