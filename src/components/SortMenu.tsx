@@ -16,7 +16,9 @@ const SortMenu: React.FC<SortMenuProps> = ({ sortOption, onSortChange }) => {
         className="p-2 border bg-zinc-900 text-white"
       >
         {SortOptions.map((option) => (
-          <option value={option.value}>{option.name}</option>
+          <option key={option.id} value={option.value}>
+            {option.name}
+          </option>
         ))}
       </select>
     </div>

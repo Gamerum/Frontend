@@ -9,7 +9,7 @@ const LeftSidebar: React.FC = () => {
 
   return (
     <div
-      className={`${isOpen ? 'w-64' : 'w-16'} bg-gray-800 text-white h-full flex flex-col`}
+      className={`${isOpen ? 'w-64' : 'w-16'} bg-gray-800 text-white h-full flex-col hidden md:flex`}
     >
       <button onClick={toggleSidebar} className="p-4 focus:outline-none">
         {isOpen ? 'Close' : 'Open'}

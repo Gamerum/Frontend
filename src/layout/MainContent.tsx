@@ -23,7 +23,7 @@ const MainContent: React.FC = () => {
   }, [sortOption]);
 
   return (
-    <main className="flex flex-1 flex-col p-4 ml-10 mr-10">
+    <main className="flex flex-1 flex-col p-4 overflow-y-auto scrollbar-hide min-w-[16rem] sm:min-w-[20rem] md:min-w-[28rem]">
       <PostCardContainerMenu />
       <PostCardContainer postCards={posts} />
     </main>

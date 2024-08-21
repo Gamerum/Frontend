@@ -4,7 +4,6 @@ import { getPostUrl } from '../../utils/urlUtils';
 import { PostCardFooterProps } from '../../types/Post';
 import { formatNumber } from '../../utils/numberFormatter';
 import { Button } from 'primereact/button';
-import { Link } from 'react-router-dom';
 
 const PostCardFooter: React.FC<PostCardFooterProps> = ({
   id,
