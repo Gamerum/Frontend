@@ -37,6 +37,9 @@ module.exports = {
           900: '#000000',
         },
       },
+      fontSize: {
+        '2xs': '0.65rem',
+      },
     },
   },
   plugins: [],

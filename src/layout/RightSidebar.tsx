@@ -1,16 +1,30 @@
 import React from 'react';
+import PopularGames from '../components/right_sidebar/PopularGames';
+import wow from '../assets/wow.png';
 
 const RightSidebar: React.FC = () => {
+  const tempPopularGames = [
+    {
+      id: 1,
+      image:
+        'https://static.wikia.nocookie.net/wowpedia/images/6/60/WoW-boxcover.jpg/revision/latest/scale-to-width-down/250?cb=20190228164118',
+      communityCount: 100000000,
+    },
+    {
+      id: 2,
+      image: wow,
+      communityCount: 100000000,
+    },
+    {
+      id: 3,
+      image:
+        'https://static.wikia.nocookie.net/wowpedia/images/6/60/WoW-boxcover.jpg/revision/latest/scale-to-width-down/250?cb=20190228164118',
+      communityCount: 100000000,
+    },
+  ];
   return (
-    <aside className="w-64 p-4 bg-red-300 h-full flex-col overflow-y-auto hidden md:flex">
-      <div className="mb-4 bg-white p-4 shadow rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">Panel 1</h2>
-        <p>Content of Panel 1</p>
-      </div>
-      <div className="bg-white p-4 shadow rounded-lg">
-        <h2 className="text-xl font-semibold mb-2">Panel 2</h2>
-        <p>Content of Panel 2</p>
-      </div>
+    <aside className="w-auto p-4 bg-zinc-900 h-full flex-col hidden md:flex">
+      <PopularGames popularGames={tempPopularGames} />
     </aside>
   );
 };
