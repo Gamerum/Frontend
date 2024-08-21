@@ -5,7 +5,7 @@ function Profile() {
     <div>
       <Avatar
         image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png"
-        size="xlarge"
+        size="large"
         shape="circle"
       />
     </div>

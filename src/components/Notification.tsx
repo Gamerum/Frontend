@@ -1,14 +1,18 @@
 import React from 'react';
-import { IoNotificationsOutline } from 'react-icons/io5';
 
 import { Badge } from 'primereact/badge';
 
 function Notification() {
+  const value: number = 5;
+
   return (
     <div className="text-2xl">
-      <IoNotificationsOutline className="text-main-250">
-        <Badge value="2"></Badge>
-      </IoNotificationsOutline>
+      <i
+        className="pi pi-bell p-overlay-badge text-main-250"
+        style={{ fontSize: '1.5rem' }}
+      >
+        <Badge value={value}></Badge>
+      </i>
     </div>
   );
 }

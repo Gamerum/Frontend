@@ -53,7 +53,7 @@ function Header() {
               </div>
             )}
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center justify-between gap-2 space-x-2">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="block md:hidden text-main-250"
