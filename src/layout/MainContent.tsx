@@ -7,11 +7,12 @@ import logo from '../assets/logo.png';
 import { SortProvider, useSort } from '../contexts/SortContext';
 
 const MainContent: React.FC = () => {
-  const [posts, setPosts] = useState([
+  const [postCards, setPostCards] = useState([
     defaultPostCardProps,
     { ...defaultPostCardProps, id: '1', image: logo },
     { ...defaultPostCardProps, id: '2' },
   ]);
+
   const { sortOption } = useSort();
 
   useUpdateEffect(() => {
@@ -25,7 +26,7 @@ const MainContent: React.FC = () => {
   return (
     <main className="flex flex-1 flex-col p-4 overflow-y-auto scrollbar-hide min-w-[16rem] sm:min-w-[20rem] md:min-w-[28rem]">
       <PostCardContainerMenu />
-      <PostCardContainer postCards={posts} />
+      <PostCardContainer postCards={postCards} />
     </main>
   );
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import PopularSlider from '../components/right_sidebar/PopularSlider';
 import wow from '../assets/wow.png';
+import RecentPosts from '../components/right_sidebar/RecentPosts';
+import { defaultPostCardProps } from '../types/Post';
 
 const RightSidebar: React.FC = () => {
   const tempPopularGames = [
@@ -56,12 +58,19 @@ const RightSidebar: React.FC = () => {
     },
   ];
 
+  const postCards = [
+    defaultPostCardProps,
+    { ...defaultPostCardProps, id: '1' },
+    { ...defaultPostCardProps, id: '2' },
+  ];
+
   return (
     <aside className="w-96 p-4 bg-zinc-900 h-full flex-col hidden md:flex overflow-visible">
       <PopularSlider
         popularCommunities={popularCommunities}
         popularGames={tempPopularGames}
       />
+      <RecentPosts postCards={postCards} />
     </aside>
   );
 };
