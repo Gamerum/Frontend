@@ -65,7 +65,7 @@ const RightSidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-96 p-4 bg-zinc-900 h-full flex-col hidden md:flex overflow-visible">
+    <aside className="w-[27rem] p-4 bg-zinc-900 h-full flex-col hidden md:flex overflow-visible">
       <PopularSlider
         popularCommunities={popularCommunities}
         popularGames={tempPopularGames}

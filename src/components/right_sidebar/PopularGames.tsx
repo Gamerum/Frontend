@@ -7,15 +7,15 @@ const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
   return (
     <div className="popular-games mb-4">
       <h2 className="text-xl font-bold mb-5 text-white">Popular Games</h2>
-      <div className="flex space-x-4">
+      <div className="flex space-x-2">
         {popularGames.map((game) => (
           <a
             key={game.id}
-            className="relative w-32 h-44 group"
+            className="relative w-40 h-44 group"
             href={getCommunitySearchViaGame(game.id)}
           >
             <Card
-              className="relative w-full h-full p-0 overflow-hidden transition-transform duration-300 shadow-lg"
+              className="relative w-full h-full overflow-hidden transition-transform duration-300 shadow-lg border-none rounded-none"
               style={{
                 backgroundImage: `url(${game.image})`,
                 backgroundSize: 'cover',

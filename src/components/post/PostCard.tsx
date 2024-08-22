@@ -14,7 +14,9 @@ const PostCard: React.FC<
   const timePassed = calculateTimePassed(propsWithDefaults.createdAt);
 
   return (
-    <div className={`p-card post-card p-4 shadow ${bgColor || 'bg-zinc-900'}`}>
+    <div
+      className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor || 'bg-zinc-900'}`}
+    >
       <PostCardHeader
         writer={propsWithDefaults.writer}
         community={propsWithDefaults.community}
