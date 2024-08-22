@@ -39,3 +39,17 @@ export function getProfileUrl(userId: string): string {
 export function getPostUrl(postId: string): string {
   return `/post/${postId}`;
 }
+
+/**
+ * Generates a URL for searching communities related to a specific game.
+ *
+ * This function creates a URL for accessing a search page where communities associated
+ * with a particular game can be found. The URL typically follows the pattern `/search/communities`
+ * and is used to navigate to the search results for communities related to the specified game.
+ *
+ * @param gameId - The ID of the game for which to search related communities.
+ * @returns The URL string for the community search page.
+ */
+export function getCommunitySearchViaGame(gameId: string): string {
+  return `/search/communities`;
+}

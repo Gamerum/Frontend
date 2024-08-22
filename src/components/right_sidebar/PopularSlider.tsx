@@ -24,10 +24,10 @@ const PopularSlider: React.FC<PopularSliderProps> = ({
         }}
       >
         <SplideSlide className="p-2">
-          <PopularCommunities popularCommunities={popularCommunities} />
+          <PopularGames popularGames={popularGames} />
         </SplideSlide>
         <SplideSlide className="p-2">
-          <PopularGames popularGames={popularGames} />
+          <PopularCommunities popularCommunities={popularCommunities} />
         </SplideSlide>
       </Splide>
     </div>
