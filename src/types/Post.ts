@@ -1,13 +1,13 @@
 import default_profile_picture from '../assets/default_profile_picture.jpg';
 
 interface Writer {
-  id: number;
+  id: string;
   profilePhoto: string;
   nickname: string;
 }
 
 interface Community {
-  id: number;
+  id: string;
   title: string;
 }
 
@@ -18,19 +18,19 @@ export interface PostCardHeaderProps {
 }
 
 export interface PostCardBodyProps {
-  id: number;
+  id: string;
   title: string;
   image?: string;
 }
 
 export interface PostCardFooterProps {
-  id: number;
+  id: string;
   commentCount: number;
   likeCount: number;
 }
 
 export interface PostCardProps {
-  id: number;
+  id: string;
   title: string;
   image?: string;
   commentCount: number;
@@ -46,18 +46,18 @@ export interface PostCardContainerProps {
 
 // Default values
 const defaultWriter: Writer = {
-  id: 0,
+  id: '0',
   profilePhoto: default_profile_picture,
   nickname: 'Unknown',
 };
 
 const defaultCommunity: Community = {
-  id: 0,
+  id: '0',
   title: 'No Community',
 };
 
 export const defaultPostCardProps: PostCardProps = {
-  id: 0,
+  id: '0',
   title: 'Untitled Post',
   image: '',
   commentCount: 0,

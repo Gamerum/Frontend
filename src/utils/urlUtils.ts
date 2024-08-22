@@ -8,7 +8,7 @@
  * @param communityId - The ID of the community for which to generate the URL.
  * @returns The URL string for the specific community page.
  */
-export function getCommunityUrl(communityId: number): string {
+export function getCommunityUrl(communityId: string): string {
   return `/community/${communityId}`;
 }
 
@@ -22,7 +22,7 @@ export function getCommunityUrl(communityId: number): string {
  * @param profileId - The ID of the profile for which to generate the URL.
  * @returns The URL string for the specific profile page.
  */
-export function getProfileUrl(userId: number): string {
+export function getProfileUrl(userId: string): string {
   return `/profile/${userId}`;
 }
 
@@ -36,6 +36,6 @@ export function getProfileUrl(userId: number): string {
  * @param postId - The ID of the post for which to generate the URL.
  * @returns The URL string for the specific post page.
  */
-export function getPostUrl(postId: number): string {
+export function getPostUrl(postId: string): string {
   return `/post/${postId}`;
 }

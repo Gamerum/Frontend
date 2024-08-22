@@ -9,8 +9,8 @@ import { SortProvider, useSort } from '../contexts/SortContext';
 const MainContent: React.FC = () => {
   const [posts, setPosts] = useState([
     defaultPostCardProps,
-    { ...defaultPostCardProps, id: 1, image: logo },
-    { ...defaultPostCardProps, id: 2 },
+    { ...defaultPostCardProps, id: '1', image: logo },
+    { ...defaultPostCardProps, id: '2' },
   ]);
   const { sortOption } = useSort();
 
