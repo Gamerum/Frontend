@@ -1,6 +1,5 @@
 import React from 'react';
-import PopularGames from '../components/right_sidebar/PopularGames';
-import PopularCommunities from '../components/right_sidebar/PopularCommunities';
+import PopularSlider from '../components/right_sidebar/PopularSlider';
 import wow from '../assets/wow.png';
 
 const RightSidebar: React.FC = () => {
@@ -58,9 +57,11 @@ const RightSidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-auto p-4 bg-zinc-900 h-full flex-col hidden md:flex">
-      <PopularGames popularGames={tempPopularGames} />
-      <PopularCommunities popularCommunities={popularCommunities} />
+    <aside className="w-96 p-4 bg-zinc-900 h-full flex-col hidden md:flex overflow-visible">
+      <PopularSlider
+        popularCommunities={popularCommunities}
+        popularGames={tempPopularGames}
+      />
     </aside>
   );
 };

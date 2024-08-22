@@ -6,7 +6,7 @@ const PopularCommunities: React.FC<PopularCommunitiesProps> = ({
   popularCommunities,
 }) => {
   return (
-    <div className="shadow-lg mt-4">
+    <div className="shadow-lg">
       <h2 className="text-xl font-bold mb-4 text-white">Popular Communities</h2>
       <div className="flex flex-col space-y-2 shadow-xl">
         {popularCommunities.map((community) => (

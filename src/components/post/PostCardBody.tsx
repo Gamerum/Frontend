@@ -15,7 +15,7 @@ const PostCardBody: React.FC<PostCardBodyProps> = ({ id, title, image }) => {
         <img
           src={image}
           alt="Post"
-          className="w-full h-auto max-h-96 object-cover mb-2"
+          className="w-full h-auto max-h-96 object-cover mb-2, min-h-20"
         />
       )}
     </div>

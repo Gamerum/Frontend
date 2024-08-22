@@ -14,3 +14,8 @@ export interface PopularCommunitiesProps {
     image: string;
   }[];
 }
+
+export interface PopularSliderProps {
+  popularCommunities: PopularCommunitiesProps['popularCommunities'];
+  popularGames: PopularGamesProps['popularGames'];
+}

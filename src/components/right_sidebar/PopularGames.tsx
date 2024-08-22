@@ -30,7 +30,7 @@ const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
             </Card>
 
             {/* Glow Effect */}
-            <div className="absolute inset-0 transition-shadow duration-300 group-hover:shadow-[0_0px_30px_-5px_rgba(255,255,255,0.7)]"></div>
+            <div className="absolute inset-0 transition-shadow duration-300 group-hover:shadow-[0_0px_8px_0px_rgba(255,255,255,0.7)]"></div>
           </div>
         ))}
       </div>
