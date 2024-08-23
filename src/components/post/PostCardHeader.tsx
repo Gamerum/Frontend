@@ -3,15 +3,19 @@ import { Avatar } from 'primereact/avatar';
 import { getCommunityUrl, getProfileUrl } from '../../utils/urlUtils';
 import { PostCardHeaderProps } from '../../types/Post';
 import { Link } from 'react-router-dom';
+import { calculateTimePassed } from '../../utils/timeUtils';
+import { useTranslation } from 'react-i18next';
 
 const PostCardHeader: React.FC<PostCardHeaderProps> = ({
   writer,
   community,
-  timePassed,
+  createdAt,
 }) => {
+  const { t } = useTranslation();
+  const timePassed = calculateTimePassed(createdAt, t);
+
   return (
     <div className="post-header-mobile flex flex-col ml-1 mr-1 mt-2">
-      {/* Header Content */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center">
           <Avatar
@@ -35,7 +39,6 @@ const PostCardHeader: React.FC<PostCardHeaderProps> = ({
             </Link>
           </div>
         </div>
-        {/* Time Passed */}
         <div className="text-gray-400 text-xs">{timePassed}</div>
       </div>
     </div>

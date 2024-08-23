@@ -2,13 +2,18 @@ import React from 'react';
 import { PopularCommunitiesProps } from '../../types/RightSidebar';
 import { formatNumber } from '../../utils/numberFormatter';
 import { getCommunityUrl } from '../../utils/urlUtils';
+import { useTranslation } from 'react-i18next';
 
 const PopularCommunities: React.FC<PopularCommunitiesProps> = ({
   popularCommunities,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="shadow-lg">
-      <h2 className="text-xl font-bold mb-4 text-white">Popular Communities</h2>
+      <h2 className="text-xl font-bold mb-4 text-white">
+        {t('popular_communities')}
+      </h2>
       <div className="flex flex-col space-y-2">
         {popularCommunities.map((community) => (
           <a
@@ -27,7 +32,7 @@ const PopularCommunities: React.FC<PopularCommunitiesProps> = ({
               </h3>
             </div>
             <div className="p-2 text-xs text-gray-400 flex items-end">
-              {formatNumber(community.memberCount)} Members
+              {formatNumber(community.memberCount, t)} {t('members')}
             </div>
           </a>
         ))}

@@ -2,11 +2,16 @@ import { PopularGamesProps } from '../../types/RightSidebar';
 import { formatNumber } from '../../utils/numberFormatter';
 import { Card } from 'primereact/card';
 import { getCommunitySearchViaGame } from '../../utils/urlUtils';
+import { useTranslation } from 'react-i18next';
 
 const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="popular-games mb-4">
-      <h2 className="text-xl font-bold mb-5 text-white">Popular Games</h2>
+      <h2 className="text-xl font-bold mb-5 text-white">
+        {t('popular_games')}
+      </h2>
       <div className="flex space-x-2">
         {popularGames.map((game) => (
           <a
@@ -30,9 +35,11 @@ const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-800 to-transparent opacity-100 filter blur-xl"></div>
                 <div className="relative z-10 flex flex-col items-center">
                   <span className="text-sm font-bold text-white mb-1">
-                    {formatNumber(game.communityCount)}
+                    {formatNumber(game.communityCount, t)}
                   </span>
-                  <span className="text-xs text-gray-200">Communities</span>
+                  <span className="text-xs text-gray-200">
+                    {t('communities')}
+                  </span>
                 </div>
               </div>
             </Card>

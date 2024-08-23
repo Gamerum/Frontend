@@ -5,6 +5,34 @@
   "upload": "Yükle",
   "cancel": "İptal",
 
+  "popular_communities": "Popüler Komüniteler",
+  "popular_games": "Popüler Oyunlar",
+  "recently_viewed_posts": "Son Tıklanan Postlar",
+
+  "communities": "Komünite",
+  "members": "Üye",
+
+  "abbreviations": {
+    "billion": "Mr",
+    "million": "Mn",
+    "thousand": "B"
+  },
+
+  "sort_options": {
+    "newest": "En Yeni",
+    "oldest": "En Eski",
+    "most_popular": "En Popüler"
+  },
+
+  "time": {
+    "seconds": "sn",
+    "minutes": "dk",
+    "hours": "sa",
+    "days": "g",
+    "years": "y",
+    "ago": "önce"
+  },
+
   "english": "İngilizce",
   "turkish": "Türkçe"
 }
