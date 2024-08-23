@@ -3,12 +3,6 @@ import { Item } from '../types/profileItem';
 const profileItems: Item[] = [
   [
     {
-      label: 'user@example.com',
-      path: '/account',
-    },
-  ],
-  [
-    {
       label: 'Settings',
       icon: 'i-heroicons-cog-8-tooth',
       path: '/settings',
