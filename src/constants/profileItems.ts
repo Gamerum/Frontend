@@ -4,26 +4,12 @@ const profileItems: Item[] = [
   [
     {
       label: 'Settings',
-      icon: 'i-heroicons-cog-8-tooth',
+      icon: 'pi pi-cog ',
       path: '/settings',
     },
-  ],
-  [
-    {
-      label: 'Changelog',
-      icon: 'i-heroicons-megaphone',
-      path: '/changelog',
-    },
-    {
-      label: 'Status',
-      icon: 'i-heroicons-signal',
-      path: '/status',
-    },
-  ],
-  [
     {
       label: 'Sign out',
-      icon: 'i-heroicons-arrow-left-on-rectangle',
+      icon: 'pi pi-sign-out',
       path: '/signout',
     },
   ],
