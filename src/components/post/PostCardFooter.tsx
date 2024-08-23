@@ -12,17 +12,17 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div className="post-footer flex justify-between items-center p-4">
+    <div className="post-footer flex justify-between items-center mr-1">
       <div className="footer-left flex items-center"></div>
       <div className="footer-right flex items-center">
         <Button
           icon="pi pi-share-alt"
-          className="p-button-text text-blue-600 mr-3 focus:outline-none focus:ring-0"
+          className="p-button-text text-blue-600 focus:outline-none focus:ring-0"
           aria-label="Share"
         />
         <Button
           icon="pi pi-comment"
-          className="p-button-text text-blue-600 mr-3 focus:outline-none focus:ring-0"
+          className="p-button-text text-blue-600 focus:outline-none focus:ring-0"
           aria-label="Comment"
           onClick={() => navigate(getPostUrl(id))}
         />
