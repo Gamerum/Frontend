@@ -8,7 +8,7 @@ import { SortProvider, useSort } from '../contexts/SortContext';
 import { ScrollableProvider } from '../contexts/ScrollableContext';
 
 const MainContent: React.FC = () => {
-  const [postCards, setPostCards] = useState([
+  const [postCards] = useState([
     defaultPostCardProps,
     { ...defaultPostCardProps, id: '1', image: logo },
     { ...defaultPostCardProps, id: '2' },

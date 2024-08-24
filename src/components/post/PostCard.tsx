@@ -6,13 +6,13 @@ import PostCardBody from './PostCardBody';
 import PostCardFooter from './PostCardFooter';
 
 const PostCard: React.FC<
-  PostCardProps & { bgColor?: string; titleSize?: string }
+  PostCardProps & { bgColor: string; titleSize?: string }
 > = ({ bgColor, titleSize, ...props }) => {
   const propsWithDefaults = { ...defaultPostCardProps, ...props };
 
   return (
     <div
-      className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor || 'bg-zinc-900'}`}
+      className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor}`}
     >
       <PostCardHeader
         writer={propsWithDefaults.writer}

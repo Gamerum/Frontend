@@ -26,3 +26,8 @@
 .p-button-text:hover .pi {
   filter: brightness(2);
 }
+
+.p-button:focus {
+  outline: none;
+  box-shadow: none;
+}
