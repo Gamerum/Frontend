@@ -14,7 +14,7 @@ interface Community {
 export interface PostCardHeaderProps {
   writer: Writer;
   community: Community;
-  timePassed: string;
+  createdAt: number;
 }
 
 export interface PostCardBodyProps {

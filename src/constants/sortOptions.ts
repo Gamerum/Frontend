@@ -1,19 +1,19 @@
-const SortOptions = [
-  {
-    id: 1,
-    value: 'newest',
-    name: 'Newest',
-  },
-  {
-    id: 2,
-    value: 'oldest',
-    name: 'Oldest',
-  },
-  {
-    id: 3,
-    value: 'mostPopular',
-    name: 'Most Popular',
-  },
-];
-
-export default SortOptions;
+export function getSortOptions(t: (key: string) => string) {
+  return [
+    {
+      id: 1,
+      value: 'newest',
+      name: t('sort_options.newest'),
+    },
+    {
+      id: 2,
+      value: 'oldest',
+      name: t('sort_options.oldest'),
+    },
+    {
+      id: 3,
+      value: 'mostPopular',
+      name: t('sort_options.most_popular'),
+    },
+  ];
+}

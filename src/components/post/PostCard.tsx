@@ -1,7 +1,6 @@
 import React from 'react';
 import { Divider } from 'primereact/divider';
 import { PostCardProps, defaultPostCardProps } from '../../types/Post';
-import { calculateTimePassed } from '../../utils/timeUtils';
 import PostCardHeader from './PostCardHeader';
 import PostCardBody from './PostCardBody';
 import PostCardFooter from './PostCardFooter';
@@ -11,8 +10,6 @@ const PostCard: React.FC<
 > = ({ bgColor, titleSize, ...props }) => {
   const propsWithDefaults = { ...defaultPostCardProps, ...props };
 
-  const timePassed = calculateTimePassed(propsWithDefaults.createdAt);
-
   return (
     <div
       className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor || 'bg-zinc-900'}`}
@@ -20,7 +17,7 @@ const PostCard: React.FC<
       <PostCardHeader
         writer={propsWithDefaults.writer}
         community={propsWithDefaults.community}
-        timePassed={timePassed}
+        createdAt={propsWithDefaults.createdAt}
       />
       <Divider />
       <PostCardBody

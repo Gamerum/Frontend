@@ -4,6 +4,7 @@ import { getPostUrl } from '../../utils/urlUtils';
 import { PostCardFooterProps } from '../../types/Post';
 import { formatNumber } from '../../utils/numberFormatter';
 import { Button } from 'primereact/button';
+import { useTranslation } from 'react-i18next';
 
 const PostCardFooter: React.FC<PostCardFooterProps> = ({
   id,
@@ -11,6 +12,8 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
   likeCount,
 }) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <div className="post-footer flex justify-between items-center mr-1">
       <div className="footer-left flex items-center"></div>
@@ -27,14 +30,16 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
           onClick={() => navigate(getPostUrl(id))}
         />
         <span className="text-gray-500 text-sm">
-          {formatNumber(commentCount)}
+          {formatNumber(commentCount, t)}
         </span>
         <Button
           icon="pi pi-thumbs-up"
           className="p-button-text text-blue-600 ml-2 focus:outline-none focus:ring-0"
           aria-label="Like"
         />
-        <span className="text-gray-500 text-sm">{formatNumber(likeCount)}</span>
+        <span className="text-gray-500 text-sm">
+          {formatNumber(likeCount, t)}
+        </span>
       </div>
     </div>
   );

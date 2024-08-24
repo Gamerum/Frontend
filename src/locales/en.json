@@ -1,0 +1,38 @@
+{
+  "accept": "Accept",
+  "reject": "Reject",
+  "choose": "Choose",
+  "upload": "Upload",
+  "cancel": "Cancel",
+
+  "popular_games": "Popular Games",
+  "popular_communities": "Popular Communities",
+  "recently_viewed_posts": "Recently Viewed Posts",
+
+  "communities": "Communities",
+  "members": "Members",
+
+  "abbreviations": {
+    "billion": "B",
+    "million": "M",
+    "thousand": "K"
+  },
+
+  "sort_options": {
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "most_popular": "Most Popular"
+  },
+
+  "time": {
+    "seconds": "s",
+    "minutes": "m",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "ago": "ago"
+  },
+
+  "english": "English",
+  "turkish": "Turkish"
+}
