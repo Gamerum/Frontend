@@ -9,11 +9,11 @@ const RecentPosts: React.FC<PostCardContainerProps> = ({ postCards }) => {
   const scrollableParentRef = useRef(null);
 
   return (
-    <ScrollableProvider value={scrollableParentRef}>
-      <div className="recent-posts-panel w-full p-2 shadow-2xl overflow-hidden mt-6">
-        <h2 className="text-xl font-bold text-white mb-4">
-          {t('recently_viewed_posts')}
-        </h2>
+    <div className="recent-posts-panel w-full p-2 shadow-2xl overflow-hidden mt-6">
+      <h2 className="text-xl font-bold text-white mb-4">
+        {t('recently_viewed_posts')}
+      </h2>
+      <ScrollableProvider value={scrollableParentRef}>
         <div
           ref={scrollableParentRef}
           className="space-y-4 overflow-y-auto max-h-[20rem] scrollbar-hide"
@@ -28,8 +28,8 @@ const RecentPosts: React.FC<PostCardContainerProps> = ({ postCards }) => {
             />
           ))}
         </div>
-      </div>
-    </ScrollableProvider>
+      </ScrollableProvider>
+    </div>
   );
 };
 

@@ -1,38 +1,14 @@
-import React, { useRef, useState } from 'react';
-import { Button } from 'primereact/button';
-import { Menu } from 'primereact/menu';
+import React from 'react';
 import { MenuItem } from 'primereact/menuitem';
 import { useTranslation } from 'react-i18next';
-import { useScrollableContext } from '../../contexts/ScrollableContext';
-import { useMountEffect } from 'primereact/hooks';
+import Menu from '../Menu';
 
 const PostOptionsMenu: React.FC = () => {
-  const menu = useRef<Menu>(null);
   const { t } = useTranslation();
-  const scrollableParentRef = useScrollableContext();
 
   const handleReport = () => {
     console.log('report');
   };
-
-  useMountEffect(() => {
-    const handleScroll = (event: Event) => {
-      const menuElement = menu.current?.getElement();
-
-      if (menuElement) {
-        menu.current?.hide({
-          ...event,
-          persist: () => {},
-          nativeEvent: event,
-        } as unknown as React.SyntheticEvent);
-      }
-    };
-
-    const scrollableElement = scrollableParentRef?.current;
-    if (scrollableElement) {
-      scrollableElement.addEventListener('scroll', handleScroll);
-    }
-  });
 
   const menuItems: MenuItem[] = [
     {
@@ -55,20 +31,19 @@ const PostOptionsMenu: React.FC = () => {
   ];
 
   return (
-    <>
-      <Button
-        icon="pi pi-ellipsis-v"
-        className="text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-0 text-sm"
-        aria-label="Options"
-        onClick={(event) => menu.current?.toggle(event)}
-      />
-      <Menu
-        model={menuItems}
-        popup
-        ref={menu}
-        className="absolute right-0 w-36 shadow-lg p-0"
-      />
-    </>
+    <Menu
+      menuItems={menuItems}
+      buttonProps={{
+        icon: 'pi pi-ellipsis-v',
+        className:
+          'text-blue-600 hover:text-blue-800 focus:outline-none focus:ring-0 text-sm w-1 mr-1 ml-2',
+      }}
+      menuProps={{
+        popup: true,
+        className: 'absolute right-0 w-36 shadow-lg p-0',
+        popupAlignment: 'right',
+      }}
+    ></Menu>
   );
 };
 
