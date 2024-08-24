@@ -5,6 +5,7 @@ import { PostCardHeaderProps } from '../../types/Post';
 import { Link } from 'react-router-dom';
 import { calculateTimePassed } from '../../utils/timeUtils';
 import { useTranslation } from 'react-i18next';
+import PostOptionsMenu from './PostOptionsMenu';
 
 const PostCardHeader: React.FC<PostCardHeaderProps> = ({
   writer,
@@ -39,7 +40,10 @@ const PostCardHeader: React.FC<PostCardHeaderProps> = ({
             </Link>
           </div>
         </div>
-        <div className="text-gray-400 text-xs">{timePassed}</div>
+        <div className="flex items-center">
+          <div className="text-gray-400 text-xs">{timePassed}</div>
+          <PostOptionsMenu />
+        </div>
       </div>
     </div>
   );
