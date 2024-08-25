@@ -1,31 +1,43 @@
 import React from 'react';
 import { getSortOptions } from '../constants/sortOptions';
 import { useTranslation } from 'react-i18next';
+import { useSort } from '../contexts/SortContext';
+import { MenuItem } from 'primereact/menuitem';
+import DropdownMenu from './DropdownMenu';
+import { Button } from 'primereact/button';
 
-interface SortMenuProps {
-  sortOption: string;
-  onSortChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-}
-
-const SortMenu: React.FC<SortMenuProps> = ({ sortOption, onSortChange }) => {
+const SortMenu: React.FC = () => {
   const { t } = useTranslation();
-  const options = getSortOptions(t);
+  const { sortOption, setSortOption } = useSort();
+
+  const options: MenuItem[] = getSortOptions(t).map((option) => ({
+    command: () => setSortOption(option),
+    template: (item, options) => {
+      return (
+        <Button
+          label={option.name}
+          type="button"
+          className={`w-full p-2 text-left text-white transition-colors duration-200 ease-in-out rounded-none bg-zinc-800 border-b-2 border-main-800`}
+          onClick={options.onClick}
+        ></Button>
+      );
+    },
+  }));
 
   return (
-    <div className="p-4 shadow-sm mb-4">
-      <select
-        id="sort"
-        value={sortOption}
-        onChange={onSortChange}
-        className="p-2 border bg-zinc-900 text-white"
-      >
-        {options.map((option) => (
-          <option key={option.id} value={option.value}>
-            {option.name}
-          </option>
-        ))}
-      </select>
-    </div>
+    <DropdownMenu
+      menuItems={options}
+      buttonProps={{
+        label: sortOption.name,
+        className:
+          'focus:ring-0 text-md p-3 rounded-none bg-zinc-800 text-white min-w-20 max-h-10',
+      }}
+      menuProps={{
+        popup: true,
+        className: 'w-36 shadow-lg p-0 mt-[0.1rem]',
+        popupAlignment: 'right',
+      }}
+    ></DropdownMenu>
   );
 };
 

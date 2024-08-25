@@ -4,6 +4,7 @@
   "choose": "Seç",
   "upload": "Yükle",
   "cancel": "İptal",
+  "report": "Raporla",
 
   "popular_communities": "Popüler Komüniteler",
   "popular_games": "Popüler Oyunlar",
@@ -19,9 +20,9 @@
   },
 
   "sort_options": {
-    "newest": "En Yeni",
-    "oldest": "En Eski",
-    "most_popular": "En Popüler"
+    "newest": "Yeni",
+    "oldest": "Eski",
+    "most_popular": "Popüler"
   },
 
   "time": {
