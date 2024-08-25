@@ -31,3 +31,8 @@
   outline: none;
   box-shadow: none;
 }
+
+.p-tabmenu-nav {
+  background-color: transparent !important;
+  border: none !important;
+}

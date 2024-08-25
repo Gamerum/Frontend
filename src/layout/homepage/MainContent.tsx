@@ -32,7 +32,7 @@ const MainContent: React.FC = () => {
         ref={scrollableParentRef}
         className="flex flex-1 flex-col p-4 overflow-y-auto scrollbar-hide min-w-[16rem] sm:min-w-[20rem] md:min-w-[28rem]"
       >
-        <PostCardContainerMenu />
+        <PostCardContainerMenu sortMenu />
         <PostCardContainer postCards={postCards} />
       </main>
     </ScrollableProvider>

@@ -5,6 +5,8 @@ import PostCardContainer from '../../components/post/PostCardContainer';
 import logo from '../../assets/logo.png';
 import { SortProvider, useSort } from '../../contexts/SortContext';
 import { ScrollableProvider } from '../../contexts/ScrollableContext';
+import TagTabMenu from '../../components/TagTabMenu';
+import PostCardContainerMenu from '../../components/post/PostCardContainerMenu';
 
 const MainContent: React.FC = () => {
   const [postCards] = useState([
@@ -29,9 +31,12 @@ const MainContent: React.FC = () => {
     <ScrollableProvider value={scrollableParentRef}>
       <main
         ref={scrollableParentRef}
-        className="flex flex-1 flex-col p-4 overflow-y-auto scrollbar-hide min-w-[16rem] sm:min-w-[20rem] md:min-w-[28rem]"
+        className="flex flex-1 flex-col p-4  min-w-[16rem] sm:min-w-[20rem] md:min-w-[28rem]"
       >
-        <PostCardContainer postCards={postCards} />
+        <PostCardContainerMenu sortMenu tagTabMenu />
+        <div className="overflow-y-auto scrollbar-hide">
+          <PostCardContainer postCards={postCards} />
+        </div>
       </main>
     </ScrollableProvider>
   );
