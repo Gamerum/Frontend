@@ -15,7 +15,7 @@ const PostCardFooter: React.FC<PostCardFooterProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="post-footer flex justify-between items-center mr-1">
+    <div className="post-footer flex justify-between items-center mr-3">
       <div className="footer-left flex items-center"></div>
       <div className="footer-right flex items-center">
         <Button

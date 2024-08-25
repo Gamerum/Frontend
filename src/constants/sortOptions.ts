@@ -1,3 +1,9 @@
+export interface SortOption {
+  id: number;
+  value: string;
+  name: string;
+}
+
 export function getSortOptions(t: (key: string) => string) {
   return [
     {

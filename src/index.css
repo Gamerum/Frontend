@@ -62,3 +62,7 @@
 .notification-menu .p-menuitem-link:hover {
   @apply bg-secondary-350 !text-main-400;
 }
+.p-button:focus {
+  outline: none;
+  box-shadow: none;
+}
