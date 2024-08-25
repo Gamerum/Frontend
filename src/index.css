@@ -50,3 +50,15 @@
 .custom-menu .p-submenu-list-flipped {
   @apply bg-main-850 text-main-300;
 }
+
+.notification-menu .p-menuitem-link {
+  @apply border-y  border-secondary-200 bg-transparent;
+}
+
+.notification-menu .p-menuitem-link:last-child {
+  @apply border-b-0;
+}
+
+.notification-menu .p-menuitem-link:hover {
+  @apply bg-secondary-350 !text-main-400;
+}
