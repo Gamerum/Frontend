@@ -3,45 +3,44 @@ import { Avatar } from 'primereact/avatar';
 import { getCommunityUrl, getProfileUrl } from '../../utils/urlUtils';
 import { PostCardHeaderProps } from '../../types/Post';
 import { Link } from 'react-router-dom';
+import { calculateTimePassed } from '../../utils/timeUtils';
+import { useTranslation } from 'react-i18next';
 
 const PostCardHeader: React.FC<PostCardHeaderProps> = ({
   writer,
   community,
-  timePassed,
+  createdAt,
 }) => {
+  const { t } = useTranslation();
+  const timePassed = calculateTimePassed(createdAt, t);
+
   return (
-    <div className="post-header relative flex flex-col sm:flex-row sm:justify-between p-4">
-      <div className="flex items-center flex-wrap">
-        <Avatar
-          image={writer.profilePhoto}
-          shape="circle"
-          size="normal"
-          className="mr-2"
-        />
-        <div className="flex flex-col sm:flex-row items-start">
-          <div className="text-sm font-semibold text-white mr-2 truncate">
-            <Link to={getProfileUrl(writer.id)}>{writer.nickname}</Link>
-          </div>
-          {/* Separator and Time Passed */}
-          <div className="hidden sm:flex items-center text-gray-500 text-sm">
-            <div className="mr-2">•</div>
-            <div>{timePassed}</div>
+    <div className="post-header-mobile flex flex-col ml-1 mr-1 mt-2">
+      <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center">
+          <Avatar
+            image={writer.profilePhoto}
+            shape="circle"
+            size="normal"
+            className="mr-2"
+          />
+          <div className="flex flex-col">
+            <Link
+              to={getProfileUrl(writer.id)}
+              className="text-sm font-semibold text-white"
+            >
+              {writer.nickname}
+            </Link>
+            <Link
+              to={getCommunityUrl(community.id)}
+              className="text-xs font-bold text-blue-500 mt-1"
+            >
+              {community.title}
+            </Link>
           </div>
         </div>
+        <div className="text-gray-400 text-xs">{timePassed}</div>
       </div>
-
-      {/* Time Passed on Mobile */}
-      <div className="absolute top-4 right-4 mt-2 text-gray-500 text-sm sm:hidden">
-        {timePassed}
-      </div>
-
-      {/* Community Name */}
-      <Link
-        className="text-sm font-bold text-blue-600 mt-4 sm:mt-2 truncate"
-        to={getCommunityUrl(community.id)}
-      >
-        {community.title}
-      </Link>
     </div>
   );
 };

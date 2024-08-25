@@ -1,5 +1,6 @@
 import React from 'react';
-import SortOptions from '../constants/sortOptions';
+import { getSortOptions } from '../constants/sortOptions';
+import { useTranslation } from 'react-i18next';
 
 interface SortMenuProps {
   sortOption: string;
@@ -7,6 +8,9 @@ interface SortMenuProps {
 }
 
 const SortMenu: React.FC<SortMenuProps> = ({ sortOption, onSortChange }) => {
+  const { t } = useTranslation();
+  const options = getSortOptions(t);
+
   return (
     <div className="p-4 shadow-sm mb-4">
       <select
@@ -15,7 +19,7 @@ const SortMenu: React.FC<SortMenuProps> = ({ sortOption, onSortChange }) => {
         onChange={onSortChange}
         className="p-2 border bg-zinc-900 text-white"
       >
-        {SortOptions.map((option) => (
+        {options.map((option) => (
           <option key={option.id} value={option.value}>
             {option.name}
           </option>

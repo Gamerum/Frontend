@@ -46,6 +46,9 @@ module.exports = {
           350: '#3B3B3B',
         },
       },
+      fontSize: {
+        '2xs': '0.65rem',
+      },
     },
   },
   plugins: [],

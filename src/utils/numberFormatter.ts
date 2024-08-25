@@ -13,13 +13,16 @@
  * @param value - The number to format.
  * @returns A string representing the formatted number.
  */
-export function formatNumber(value: number): string {
+export function formatNumber(
+  value: number,
+  t: (key: string) => string
+): string {
   if (value >= 1_000_000_000) {
-    return (value / 1_000_000_000).toFixed(1) + 'B';
+    return value / 1_000_000_000 + ' ' + t('abbreviations.billion');
   } else if (value >= 1_000_000) {
-    return (value / 1_000_000).toFixed(1) + 'M';
+    return value / 1_000_000 + ' ' + t('abbreviations.million');
   } else if (value >= 1_000) {
-    return (value / 1_000).toFixed(1) + 'K';
+    return value / 1_000 + ' ' + t('abbreviations.thousand');
   } else {
     return value.toString();
   }
