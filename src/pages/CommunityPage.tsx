@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../layout/Header';
 import LeftSidebar from '../layout/LeftSidebar';
-import MainContent from '../layout/homepage/MainContent';
-import RightSidebar from '../layout/homepage/RightSidebar';
+import MainContent from '../layout/community_page/MainContent';
+import RightSidebar from '../layout/community_page/RightSidebar';
 
-const HomePage: React.FC = () => {
+const CommunityPage: React.FC = () => {
   return (
     <div className="h-screen flex flex-col bg-main-800 min-h-screen">
       <Header />
@@ -17,4 +17,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default CommunityPage;
