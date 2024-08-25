@@ -30,16 +30,14 @@ function Profile() {
     { separator: true },
     {
       label: 'Language',
-      icon: 'pi pi-globe',
+      icon: 'pi pi-language',
       items: [
         {
           label: 'English',
-          icon: 'pi pi-flag-us',
           command: () => i18n.changeLanguage('en'),
         },
         {
-          label: 'Turkish',
-          icon: 'pi pi-unlock',
+          label: 'Türkçe',
           command: () => i18n.changeLanguage('tr'),
         },
       ],
