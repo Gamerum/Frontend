@@ -3,12 +3,12 @@ import { Item } from '../types/profileItem';
 const profileItems: Item[] = [
   [
     {
-      label: 'Settings',
+      label: 'settings',
       icon: 'pi pi-cog ',
       path: '/settings',
     },
     {
-      label: 'Sign out',
+      label: 'sign_out',
       icon: 'pi pi-sign-out',
       path: '/signout',
     },

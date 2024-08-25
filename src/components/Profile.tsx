@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { Avatar } from 'primereact/avatar';
-import { Menu } from 'primereact/menu';
+import { TieredMenu } from 'primereact/tieredmenu';
 import profileItems from '../constants/profileItems';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 function Profile() {
-  const menu = useRef<Menu>(null);
-  const { i18n } = useTranslation();
+  const menu = useRef<TieredMenu>(null);
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const username = 'kullancı name';
 
@@ -18,18 +18,8 @@ function Profile() {
       command: () => navigate(`/${username}`),
     },
     { separator: true },
-    ...profileItems.flat().map((item) => ({
-      label: item.label,
-      icon: item.icon,
-      command: () => {
-        if (item.path) {
-          navigate(item.path);
-        }
-      },
-    })),
-    { separator: true },
     {
-      label: 'Language',
+      label: t('language'),
       icon: 'pi pi-language',
       items: [
         {
@@ -42,6 +32,16 @@ function Profile() {
         },
       ],
     },
+    { separator: true },
+    ...profileItems.flat().map((item) => ({
+      label: t(item.label),
+      icon: item.icon,
+      command: () => {
+        if (item.path) {
+          navigate(item.path);
+        }
+      },
+    })),
   ];
 
   return (
@@ -53,8 +53,8 @@ function Profile() {
         style={{ cursor: 'pointer' }}
         shape="circle"
       />
-      <Menu
-        className="custom-menu bg-main-850 border border-secondary-350 rounded-lg text-main-300"
+      <TieredMenu
+        className="custom-menu bg-main-850 border border-secondary-350 rounded-lg !text-main-300"
         model={items}
         popup
         ref={menu}
