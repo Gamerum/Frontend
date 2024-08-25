@@ -1,10 +1,10 @@
 import React from 'react';
 import { MenuItem } from 'primereact/menuitem';
 import { useTranslation } from 'react-i18next';
-import Menu from '../Menu';
+import DropdownMenu from '../DropdownMenu';
 import { Button } from 'primereact/button';
 
-const PostOptionsMenu: React.FC = () => {
+const PostOptionsDropdownMenu: React.FC = () => {
   const { t } = useTranslation();
 
   const handleReport = () => {
@@ -30,7 +30,7 @@ const PostOptionsMenu: React.FC = () => {
   ];
 
   return (
-    <Menu
+    <DropdownMenu
       menuItems={menuItems}
       buttonProps={{
         icon: 'pi pi-ellipsis-v',
@@ -42,8 +42,8 @@ const PostOptionsMenu: React.FC = () => {
         className: 'w-36 shadow-lg p-0 bg-transparent mt-1',
         popupAlignment: 'right',
       }}
-    ></Menu>
+    ></DropdownMenu>
   );
 };
 
-export default PostOptionsMenu;
+export default PostOptionsDropdownMenu;

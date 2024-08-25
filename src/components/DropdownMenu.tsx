@@ -5,13 +5,13 @@ import { MenuItem } from 'primereact/menuitem';
 import { useScrollableContext } from '../contexts/ScrollableContext';
 import { useMountEffect } from 'primereact/hooks';
 
-interface MenuProps {
+interface DropdownMenuProps {
   menuItems: MenuItem[];
   buttonProps?: React.ComponentProps<typeof Button>;
   menuProps?: React.ComponentProps<typeof PrimeMenu>;
 }
 
-const Menu: React.FC<MenuProps> = ({
+const DropdownMenu: React.FC<DropdownMenuProps> = ({
   menuItems,
   buttonProps = {},
   menuProps = {},
@@ -50,4 +50,4 @@ const Menu: React.FC<MenuProps> = ({
   );
 };
 
-export default Menu;
+export default DropdownMenu;

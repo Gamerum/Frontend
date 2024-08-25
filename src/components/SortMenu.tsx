@@ -3,7 +3,7 @@ import { getSortOptions } from '../constants/sortOptions';
 import { useTranslation } from 'react-i18next';
 import { useSort } from '../contexts/SortContext';
 import { MenuItem } from 'primereact/menuitem';
-import Menu from './Menu';
+import DropdownMenu from './DropdownMenu';
 import { Button } from 'primereact/button';
 
 const SortMenu: React.FC = () => {
@@ -25,19 +25,19 @@ const SortMenu: React.FC = () => {
   }));
 
   return (
-    <Menu
+    <DropdownMenu
       menuItems={options}
       buttonProps={{
         label: sortOption.name,
         className:
-          'focus:ring-0 text-lg p-3 rounded-none bg-zinc-800 text-white min-w-24',
+          'focus:ring-0 text-md p-3 rounded-none bg-zinc-800 text-white min-w-20 max-h-10',
       }}
       menuProps={{
         popup: true,
         className: 'w-36 shadow-lg p-0 mt-[0.1rem]',
         popupAlignment: 'right',
       }}
-    ></Menu>
+    ></DropdownMenu>
   );
 };
 
