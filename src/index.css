@@ -27,6 +27,41 @@
   filter: brightness(2);
 }
 
+.custom-menu .p-menuitem-link {
+  @apply flex items-center gap-2 px-4 py-2;
+}
+
+.custom-menu .p-menuitem-link:hover {
+  @apply bg-secondary-350;
+}
+
+.custom-menu .p-submenu-header {
+  @apply border-b border-secondary-200 bg-transparent;
+}
+
+.custom-menu .p-menu-separator {
+  @apply border-y border-secondary-200 bg-transparent;
+}
+
+.custom-menu .p-submenu-list {
+  @apply bg-secondary-350;
+}
+
+.custom-menu .p-submenu-list-flipped {
+  @apply bg-main-850 text-main-300;
+}
+
+.notification-menu .p-menuitem-link {
+  @apply border-y  border-secondary-200 bg-transparent;
+}
+
+.notification-menu .p-menuitem-link:last-child {
+  @apply border-b-0;
+}
+
+.notification-menu .p-menuitem-link:hover {
+  @apply bg-secondary-350 !text-main-400;
+}
 .p-button:focus {
   outline: none;
   box-shadow: none;
