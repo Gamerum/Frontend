@@ -1,57 +1,66 @@
 import React, { useRef } from 'react';
 import { Avatar } from 'primereact/avatar';
-import { OverlayPanel } from 'primereact/overlaypanel';
+import { Menu } from 'primereact/menu';
 import profileItems from '../constants/profileItems';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 function Profile() {
-  const op = useRef<OverlayPanel>(null);
-  const username = 'username';
+  const menu = useRef<Menu>(null);
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const username = 'kullancı name';
+
+  const items = [
+    {
+      label: username,
+      icon: 'pi pi-user',
+      command: () => navigate(`/${username}`),
+    },
+    { separator: true },
+    ...profileItems.flat().map((item) => ({
+      label: item.label,
+      icon: item.icon,
+      command: () => {
+        if (item.path) {
+          navigate(item.path);
+        }
+      },
+    })),
+    { separator: true },
+    {
+      label: 'Language',
+      icon: 'pi pi-globe',
+      items: [
+        {
+          label: 'English',
+          icon: 'pi pi-flag-us',
+          command: () => i18n.changeLanguage('en'),
+        },
+        {
+          label: 'Turkish',
+          icon: 'pi pi-unlock',
+          command: () => i18n.changeLanguage('tr'),
+        },
+      ],
+    },
+  ];
+
   return (
     <div>
       <Avatar
         image="https://primefaces.org/cdn/primereact/images/avatar/amyelsner.png"
         size="large"
-        onClick={(e) => op.current?.toggle(e)}
+        onClick={(e) => menu.current?.toggle(e)}
         style={{ cursor: 'pointer' }}
         shape="circle"
       />
-      <OverlayPanel
-        className="bg-main-850 border border-secondary-350 rounded-lg text-main-300 p-2"
-        ref={op}
-        dismissable
-      >
-        <ul className="space-y-1">
-          <li className="gap-2 flex items-center hover:text-main-500">
-            <strong>
-              <i className="pi pi-user"></i>
-            </strong>
-            <Link to="/profile">{username}</Link>
-          </li>
-          <hr />
-          {profileItems.map((group, index) => (
-            <div key={index} className="space-y-2 py-1 ">
-              {group.map((item) => (
-                <li key={item.label} className="gap-2 flex items-center">
-                  {item.path ? (
-                    <Link
-                      to={item.path}
-                      className="gap-2 flex items-center hover:text-main-500"
-                    >
-                      {item.icon && <i className={item.icon}></i>}
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <span className="gap-2 flex items-center ">
-                      {item.icon && <i className={item.icon}></i>}
-                      {item.label}
-                    </span>
-                  )}
-                </li>
-              ))}
-            </div>
-          ))}
-        </ul>
-      </OverlayPanel>
+      <Menu
+        className="custom-menu bg-main-850 border border-secondary-350 rounded-lg text-main-300"
+        model={items}
+        popup
+        ref={menu}
+      />
     </div>
   );
 }
