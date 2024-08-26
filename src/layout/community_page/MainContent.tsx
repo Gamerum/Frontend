@@ -36,7 +36,7 @@ const MainContent: React.FC = () => {
     description: 'This is a description of the community.',
   };
 
-  const maxHeaderHeight = 650;
+  const maxHeaderHeight = 300;
   const [headerHeight, setHeaderHeight] = useState<number>(maxHeaderHeight);
   const scrollableParentRef = useRef<HTMLDivElement>(null);
   const { sortOption } = useSort();
