@@ -14,16 +14,16 @@ interface CommunityHeaderProps {
 
 const CommunityHeader: React.FC<CommunityHeaderProps> = ({ community }) => {
   return (
-    <div className="relative w-full max-w-4xl mx-auto h-[40rem] overflow-hidden">
+    <div className="relative w-full h-[15rem]">
       <div className="absolute inset-0">
         <img
           src={community.backgroundImage}
           alt="Community Background"
-          className="w-full h-full object-cover"
+          className="w-full h-full "
         />
       </div>
-      <div className="relative flex items-center justify-center h-full z-10">
-        <Card className="w-full bg-transparent shadow-lg p-6 flex flex-col items-center z-10">
+      <div className="flex items-center justify-center h-full z-10">
+        <Card className="w-full bg-transparent shadow-lg p-6 items-center z-10">
           <div className="flex justify-center mb-4">
             <img
               src={community.photo}
@@ -37,9 +37,11 @@ const CommunityHeader: React.FC<CommunityHeaderProps> = ({ community }) => {
               {community.title}
             </h1>
             {/* Description Container */}
-            <p className="text-gray-300 text-xs break-words whitespace-normal">
+            <p className="text-gray-300 text-xs break-words whitespace-normal h-9">
               1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
-              1234567890 1234567890 1234567890 1234567890
+              1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
+              1234567890 1234567890 1234567890 1234567890 1234567890 1234567890
+              1234567890
             </p>
           </div>
         </Card>
