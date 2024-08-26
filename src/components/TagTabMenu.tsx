@@ -8,9 +8,15 @@ interface TagTabMenuProps {
   onTagSelect: (tagName: string) => void;
 }
 
+const lerp = (start: number, end: number, t: number) => {
+  return start * (1 - t) + end * t;
+};
+
 const TagTabMenu: React.FC<TagTabMenuProps> = ({ tags, onTagSelect }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  let velocity = 0;
+  let isScrolling = false;
 
   const items: MenuItem[] = tags.map((tag, index) => ({
     command: () => {
@@ -33,7 +39,31 @@ const TagTabMenu: React.FC<TagTabMenuProps> = ({ tags, onTagSelect }) => {
 
   const handleWheel = (event: React.WheelEvent) => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollLeft += event.deltaY;
+      velocity += event.deltaY; // Accumulate velocity based on the scroll event
+      if (!isScrolling) {
+        isScrolling = true;
+        requestAnimationFrame(smoothScroll);
+      }
+    }
+  };
+
+  const smoothScroll = () => {
+    if (scrollContainerRef.current) {
+      const scrollContainer = scrollContainerRef.current;
+      const targetScroll = scrollContainer.scrollLeft + velocity;
+      const newScroll = lerp(scrollContainer.scrollLeft, targetScroll, 0.1);
+      scrollContainer.scrollLeft = newScroll;
+
+      // Gradually decrease velocity to simulate friction
+      velocity *= 0.9;
+
+      // Stop the scrolling animation when velocity is very low
+      if (Math.abs(velocity) > 0.5) {
+        requestAnimationFrame(smoothScroll);
+      } else {
+        isScrolling = false;
+        velocity = 0; // Ensure velocity is reset to zero
+      }
     }
   };
 
