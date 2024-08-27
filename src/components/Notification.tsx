@@ -25,7 +25,7 @@ function Notification() {
   return (
     <div className="relative text-2xl">
       <i
-        className="pi pi-bell p-overlay-badge text-main-250"
+        className="pi pi-bell p-overlay-badge cursor-pointer header-buttons text-main-250"
         style={{ fontSize: '1.5rem' }}
         onClick={(e) => menu.current?.toggle(e)}
       >

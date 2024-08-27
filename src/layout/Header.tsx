@@ -58,8 +58,11 @@ function Header() {
                 onClick={() => setIsSearchOpen(true)}
                 className="block md:hidden text-main-250"
               >
-                <CiSearch className="h-6 w-6" />
+                <i className="pi pi-search header-buttons"></i>
               </button>
+              <Link to="/create">
+                <i className="pi pi-plus header-buttons"></i>
+              </Link>
               <Notification />
               <Profile />
             </div>
@@ -68,9 +71,9 @@ function Header() {
           <div className="flex items-center justify-between w-full space-x-2 py-4">
             <button
               onClick={() => setIsSearchOpen(false)}
-              className="text-main-250 hover:text-main-550 transition ease-in-out duration-300"
+              className="text-secondary-300 border border-secondary-350 hover:border-main-550 rounded-full flex items-center  p-2 hover:text-main-550 transition ease-in-out duration-300"
             >
-              <CiCircleChevLeft className="h-10 w-10" />
+              <i className="pi pi-chevron-left "></i>
             </button>
             <div className="w-full">
               <Search />
