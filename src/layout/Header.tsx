@@ -24,8 +24,8 @@ function Header() {
   }, []);
 
   return (
-    <header className="relative z-50 bg-transparent py-1 border-b border-main-100/20">
-      <div className="container flex items-center justify-between select-none space-x-3">
+    <header className="relative z-50 bg-transparent py-1 px-3 border-b border-main-100/20">
+      <div className="flex items-center justify-between select-none space-x-3">
         {!isSearchOpen ? (
           <>
             <div className="flex w-max items-center space-x-3">
