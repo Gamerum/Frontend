@@ -29,7 +29,10 @@ function Notification() {
         style={{ fontSize: '1.5rem' }}
         onClick={(e) => menu.current?.toggle(e)}
       >
-        <Badge value={notifications.length} />
+        <Badge
+          value={notifications.length}
+          className="bg-main-400 text-main-550"
+        />
       </i>
       <TieredMenu
         model={items}

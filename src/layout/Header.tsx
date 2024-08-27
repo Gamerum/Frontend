@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { CiSearch, CiMenuBurger, CiCircleChevLeft } from 'react-icons/ci';
 
 import Search from '../components/Search';
 import Profile from '../components/Profile';
@@ -31,11 +30,7 @@ function Header() {
           <>
             <div className="flex w-max items-center space-x-3">
               <button>
-                <CiMenuBurger
-                  className="flex-shrink-0 h-6 w-6 text-main-250"
-                  height={24}
-                  width={24}
-                />
+                <i className="pi pi-bars header-buttons"></i>
               </button>
 
               <Link to={'/'} aria-label="Home">
