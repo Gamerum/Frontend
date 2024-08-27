@@ -6,7 +6,7 @@ import RightSidebar from '../layout/RightSidebar';
 
 const HomePage: React.FC = () => {
   return (
-    <div className="h-screen flex flex-col bg-main-800 min-h-screen">
+    <div className="flex flex-col bg-main-800 min-h-screen">
       <Header />
       <div className="flex flex-grow overflow-hidden">
         <LeftSidebar />
