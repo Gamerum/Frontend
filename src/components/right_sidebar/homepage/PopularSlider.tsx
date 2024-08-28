@@ -3,7 +3,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import PopularCommunities from './PopularCommunities';
 import PopularGames from './PopularGames';
-import { PopularSliderProps } from '../../types/RightSidebar';
+import { PopularSliderProps } from '../../../types/RightSidebar';
 
 const PopularSlider: React.FC<PopularSliderProps> = ({
   popularCommunities,

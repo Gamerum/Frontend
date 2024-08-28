@@ -1,7 +1,7 @@
 import React from 'react';
-import { PopularCommunitiesProps } from '../../types/RightSidebar';
-import { formatNumber } from '../../utils/numberFormatter';
-import { getCommunityUrl } from '../../utils/urlUtils';
+import { PopularCommunitiesProps } from '../../../types/RightSidebar';
+import { formatNumber } from '../../../utils/numberFormatter';
+import { getCommunityUrl } from '../../../utils/urlUtils';
 import { useTranslation } from 'react-i18next';
 
 const PopularCommunities: React.FC<PopularCommunitiesProps> = ({

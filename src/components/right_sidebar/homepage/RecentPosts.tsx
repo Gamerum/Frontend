@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import PostCard from '../post/PostCard';
+import PostCard from '../../post/PostCard';
 import { useTranslation } from 'react-i18next';
-import { ScrollableProvider } from '../../contexts/ScrollableContext';
-import { PostCardProps } from '../../contexts/PostCardContext';
+import { ScrollableProvider } from '../../../contexts/ScrollableContext';
+import { PostCardProps } from '../../../contexts/PostCardContext';
 
 const RecentPosts: React.FC<{ postCards: PostCardProps[] }> = ({
   postCards,

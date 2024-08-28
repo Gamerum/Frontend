@@ -1,7 +1,7 @@
 import React from 'react';
-import PopularSlider from '../../components/right_sidebar/PopularSlider';
+import PopularSlider from '../../components/right_sidebar/homepage/PopularSlider';
 import wow from '../../assets/wow.png';
-import RecentPosts from '../../components/right_sidebar/RecentPosts';
+import RecentPosts from '../../components/right_sidebar/homepage/RecentPosts';
 import { defaultPostCardProps } from '../../contexts/PostCardContext';
 
 const RightSidebar: React.FC = () => {

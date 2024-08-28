@@ -1,7 +1,7 @@
-import { PopularGamesProps } from '../../types/RightSidebar';
-import { formatNumber } from '../../utils/numberFormatter';
+import { PopularGamesProps } from '../../../types/RightSidebar';
+import { formatNumber } from '../../../utils/numberFormatter';
 import { Card } from 'primereact/card';
-import { getCommunitySearchViaGame } from '../../utils/urlUtils';
+import { getCommunitySearchViaGame } from '../../../utils/urlUtils';
 import { useTranslation } from 'react-i18next';
 
 const PopularGames: React.FC<PopularGamesProps> = ({ popularGames }) => {
