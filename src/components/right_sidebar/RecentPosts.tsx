@@ -2,9 +2,11 @@ import React, { useRef } from 'react';
 import PostCard from '../post/PostCard';
 import { useTranslation } from 'react-i18next';
 import { ScrollableProvider } from '../../contexts/ScrollableContext';
-import { PostCardContainerProps } from '../post/PostCardContainer';
+import { PostCardProps } from '../../contexts/PostCardContext';
 
-const RecentPosts: React.FC<PostCardContainerProps> = ({ postCards }) => {
+const RecentPosts: React.FC<{ postCards: PostCardProps[] }> = ({
+  postCards,
+}) => {
   const { t } = useTranslation();
   const scrollableParentRef = useRef(null);
 

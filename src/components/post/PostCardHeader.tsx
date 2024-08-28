@@ -6,9 +6,11 @@ import { calculateTimePassed } from '../../utils/timeUtils';
 import { useTranslation } from 'react-i18next';
 import PostOptionsDropdownMenu from './PostOptionsDropdownMenu';
 import { usePostCard } from '../../contexts/PostCardContext';
+import { useLocation } from 'react-router-dom';
 
 const PostCardHeader: React.FC = () => {
   const { t } = useTranslation();
+  const location = useLocation();
   const post = usePostCard();
   const timePassed = calculateTimePassed(post.createdAt, t);
 
@@ -29,12 +31,16 @@ const PostCardHeader: React.FC = () => {
             >
               {post.writer.nickname}
             </Link>
-            <Link
-              to={getCommunityUrl(post.community.id)}
-              className="text-xs font-bold text-blue-500 mt-1"
-            >
-              {post.community.title}
-            </Link>
+            {location.pathname.startsWith('/community') ? (
+              <p className="text-xs font-bold text-blue-500 mt-1">{post.tag}</p>
+            ) : (
+              <Link
+                to={getCommunityUrl(post.community.id)}
+                className="text-xs font-bold text-blue-500 mt-1"
+              >
+                {post.community.title}
+              </Link>
+            )}
           </div>
         </div>
         <div className="flex items-center">
