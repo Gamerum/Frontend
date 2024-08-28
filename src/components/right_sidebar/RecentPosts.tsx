@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import PostCard from '../post/PostCard';
-import { PostCardContainerProps } from '../../types/Post';
 import { useTranslation } from 'react-i18next';
 import { ScrollableProvider } from '../../contexts/ScrollableContext';
+import { PostCardContainerProps } from '../post/PostCardContainer';
 
 const RecentPosts: React.FC<PostCardContainerProps> = ({ postCards }) => {
   const { t } = useTranslation();

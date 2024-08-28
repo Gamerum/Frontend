@@ -1,6 +1,10 @@
 import React from 'react';
 import PostCard from './PostCard';
-import { PostCardContainerProps } from '../../types/Post';
+import { PostCardProps } from '../../contexts/PostCardContext';
+
+export interface PostCardContainerProps {
+  postCards: PostCardProps[];
+}
 
 const PostCardContainer: React.FC<PostCardContainerProps> = ({ postCards }) => {
   return (

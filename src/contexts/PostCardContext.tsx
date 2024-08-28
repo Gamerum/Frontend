@@ -39,14 +39,14 @@ export const defaultPostCardProps: PostCardProps = {
   createdAt: Date.now(),
 };
 
-const PostContext = createContext<PostCardProps | undefined>(undefined);
+const PostCardContext = createContext<PostCardProps | undefined>(undefined);
 
-export const PostProvider = PostContext.Provider;
+export const PostCardProvider = PostCardContext.Provider;
 
-export const usePost = () => {
-  const context = useContext(PostContext);
+export const usePostCard = () => {
+  const context = useContext(PostCardContext);
   if (!context) {
-    throw new Error('usePost must be used within a PostProvider');
+    throw new Error('usePost must be used within a PostCardProvider');
   }
   return context;
 };

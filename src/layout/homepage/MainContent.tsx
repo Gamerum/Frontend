@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react';
 import { useUpdateEffect } from 'primereact/hooks';
-import { defaultPostCardProps } from '../../types/Post';
 import PostCardContainer from '../../components/post/PostCardContainer';
 import PostCardContainerMenu from '../../components/post/PostCardContainerMenu';
 import logo from '../../assets/logo.png';
 import { SortProvider, useSort } from '../../contexts/SortContext';
 import { ScrollableProvider } from '../../contexts/ScrollableContext';
+import { defaultPostCardProps } from '../../contexts/PostCardContext';
 
 const MainContent: React.FC = () => {
   const [postCards] = useState([

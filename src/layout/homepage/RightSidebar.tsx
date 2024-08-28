@@ -2,7 +2,7 @@ import React from 'react';
 import PopularSlider from '../../components/right_sidebar/PopularSlider';
 import wow from '../../assets/wow.png';
 import RecentPosts from '../../components/right_sidebar/RecentPosts';
-import { defaultPostCardProps } from '../../types/Post';
+import { defaultPostCardProps } from '../../contexts/PostCardContext';
 
 const RightSidebar: React.FC = () => {
   const tempPopularGames = [

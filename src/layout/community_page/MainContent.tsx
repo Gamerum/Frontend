@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { useMountEffect, useUpdateEffect } from 'primereact/hooks';
-import { defaultPostCardProps } from '../../types/Post';
 import PostCardContainer from '../../components/post/PostCardContainer';
 import logo from '../../assets/logo.png';
 import bg3 from '../../assets/bg3.jpeg';
@@ -9,6 +8,7 @@ import { SortProvider, useSort } from '../../contexts/SortContext';
 import { ScrollableProvider } from '../../contexts/ScrollableContext';
 import PostCardContainerMenu from '../../components/post/PostCardContainerMenu';
 import CommunityHeader from '../../components/community/CommunityHeader';
+import { defaultPostCardProps } from '../../contexts/PostCardContext';
 
 const MainContent: React.FC = () => {
   const [postCards] = useState([
