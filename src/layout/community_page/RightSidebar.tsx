@@ -21,25 +21,25 @@ const RightSidebar: React.FC = () => {
       id: '0',
       pp: 'https://example.com/profile1.jpg',
       nickname: 'JohnDoe',
-      role: 'Moderator',
+      role: 'moderator',
     },
     {
       id: '1',
       pp: 'https://example.com/profile2.jpg',
       nickname: 'JaneSmith',
-      role: 'Member',
+      role: 'member',
     },
     {
       id: '2',
       pp: 'https://example.com/profile1.jpg',
       nickname: 'JohnDoe',
-      role: 'Moderator',
+      role: 'moderator',
     },
     {
       id: '3',
       pp: 'https://example.com/profile2.jpg',
       nickname: 'JaneSmith',
-      role: 'Member',
+      role: 'member',
     },
   ];
 

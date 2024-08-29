@@ -5,6 +5,7 @@
   "upload": "Upload",
   "cancel": "Cancel",
   "report": "Report",
+  "all": "All",
 
   "popular_games": "Popular Games",
   "popular_communities": "Popular Communities",
@@ -12,6 +13,13 @@
 
   "communities": "Communities",
   "members": "Members",
+  "rules": "Rules",
+
+  "roles": {
+    "admin": "Admin",
+    "moderator": "Moderator",
+    "member": "Member"
+  },
 
   "abbreviations": {
     "billion": "B",

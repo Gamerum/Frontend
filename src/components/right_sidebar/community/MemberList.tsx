@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Avatar } from 'primereact/avatar';
 import { Card } from 'primereact/card';
 import { ContextMenu } from 'primereact/contextmenu';
+import { useTranslation } from 'react-i18next';
 
 interface CommunityMember {
   id: string;
@@ -15,6 +16,7 @@ interface MemberListProps {
 }
 
 const MemberList: React.FC<MemberListProps> = ({ members }) => {
+  const { t } = useTranslation();
   const cm = useRef<ContextMenu>(null);
 
   const items = [
@@ -45,7 +47,7 @@ const MemberList: React.FC<MemberListProps> = ({ members }) => {
     <>
       <Card className="shadow-md text-white bg-transparent">
         <h2 className="text-xl font-bold mb-3 text-left border-b-2 border-blue-600">
-          Members
+          {t('members')}
         </h2>
         <ul className="space-y-4 overflow-y-auto max-h-52 scrollbar scrollbar-thumb-gray-600 scrollbar-track-transparent scrollbar-thumb-rounded-full">
           {members.map((member) => (
@@ -69,7 +71,9 @@ const MemberList: React.FC<MemberListProps> = ({ members }) => {
                 <p className="text-sm font-semibold">{member.nickname}</p>
               </div>
               <div className="rounded-lg bg-zinc-800 p-1">
-                <p className="text-xs text-main-200">{member.role}</p>
+                <p className="text-xs text-main-200">
+                  {t('roles.' + member.role)}
+                </p>
               </div>
             </li>
           ))}

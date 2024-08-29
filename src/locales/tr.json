@@ -5,6 +5,7 @@
   "upload": "Yükle",
   "cancel": "İptal",
   "report": "Raporla",
+  "all": "Hepsi",
 
   "popular_communities": "Popüler Komüniteler",
   "popular_games": "Popüler Oyunlar",
@@ -12,6 +13,13 @@
 
   "communities": "Komünite",
   "members": "Üye",
+  "rules": "Kurallar",
+
+  "roles": {
+    "admin": "Yönetici",
+    "moderator": "Moderatör",
+    "member": "Üye"
+  },
 
   "abbreviations": {
     "billion": "Mr",
