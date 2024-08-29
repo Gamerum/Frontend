@@ -43,5 +43,8 @@
   },
 
   "english": "İngilizce",
-  "turkish": "Türkçe"
+  "turkish": "Türkçe",
+  "language": "Dil",
+  "settings": "Ayarlar",
+  "sign_out": "Çıkış Yap"
 }

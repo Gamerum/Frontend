@@ -43,5 +43,8 @@
   },
 
   "english": "English",
-  "turkish": "Turkish"
+  "turkish": "Turkish",
+  "language": "Language",
+  "settings": "Settings",
+  "sign_out": "Sign Out"
 }
