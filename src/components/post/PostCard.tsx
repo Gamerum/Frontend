@@ -1,9 +1,13 @@
 import React from 'react';
 import { Divider } from 'primereact/divider';
-import { PostCardProps, defaultPostCardProps } from '../../types/Post';
 import PostCardHeader from './PostCardHeader';
 import PostCardBody from './PostCardBody';
 import PostCardFooter from './PostCardFooter';
+import {
+  PostCardProps,
+  PostCardProvider,
+  defaultPostCardProps,
+} from '../../contexts/PostCardContext';
 
 const PostCard: React.FC<
   PostCardProps & { bgColor: string; titleSize?: string }
@@ -11,28 +15,17 @@ const PostCard: React.FC<
   const propsWithDefaults = { ...defaultPostCardProps, ...props };
 
   return (
-    <div
-      className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor}`}
-    >
-      <PostCardHeader
-        writer={propsWithDefaults.writer}
-        community={propsWithDefaults.community}
-        createdAt={propsWithDefaults.createdAt}
-      />
-      <Divider />
-      <PostCardBody
-        id={propsWithDefaults.id}
-        title={propsWithDefaults.title}
-        image={propsWithDefaults.image}
-        titleSize={titleSize}
-      />
-      <Divider />
-      <PostCardFooter
-        id={propsWithDefaults.id}
-        commentCount={propsWithDefaults.commentCount}
-        likeCount={propsWithDefaults.likeCount}
-      />
-    </div>
+    <PostCardProvider value={propsWithDefaults}>
+      <div
+        className={`p-card post-card p-4 shadow border-none rounded-none ${bgColor}`}
+      >
+        <PostCardHeader />
+        <Divider />
+        <PostCardBody />
+        <Divider />
+        <PostCardFooter />
+      </div>
+    </PostCardProvider>
   );
 };
 

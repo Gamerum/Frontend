@@ -30,7 +30,7 @@ const SortMenu: React.FC = () => {
       buttonProps={{
         label: sortOption.name,
         className:
-          'focus:ring-0 text-md p-3 rounded-none bg-zinc-800 text-white min-w-20 max-h-10',
+          'focus:ring-0 text-sm p-3 rounded-none bg-zinc-800 text-white min-w-20 max-h-9',
       }}
       menuProps={{
         popup: true,

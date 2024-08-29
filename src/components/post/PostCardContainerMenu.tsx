@@ -1,9 +1,27 @@
+import { useTranslation } from 'react-i18next';
 import SortMenu from '../SortMenu';
+import TagTabMenu from '../TagTabMenu';
 
-const PostCardContainerMenu: React.FC = () => {
+interface PostCardContainerMenuProps {
+  sortMenu?: boolean;
+  tagTabMenu?: boolean;
+}
+
+const PostCardContainerMenu: React.FC<PostCardContainerMenuProps> = ({
+  sortMenu = false,
+  tagTabMenu = false,
+}) => {
+  const { t } = useTranslation();
+  const tags = [t('all'), 'Adventure', 'Strategy', 'Action'];
+
+  const handleTagSelect = (tagName: string) => {
+    console.log(`Selected tag: ${tagName}`);
+  };
+
   return (
-    <div className="flex items-center justify-end mb-4">
-      <SortMenu />
+    <div className="flex items-center justify-between mb-4">
+      {tagTabMenu && <TagTabMenu tags={tags} onTagSelect={handleTagSelect} />}
+      {sortMenu && <SortMenu />}
     </div>
   );
 };

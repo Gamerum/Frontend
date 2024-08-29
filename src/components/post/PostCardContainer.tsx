@@ -1,8 +1,10 @@
 import React from 'react';
 import PostCard from './PostCard';
-import { PostCardContainerProps } from '../../types/Post';
+import { PostCardProps } from '../../contexts/PostCardContext';
 
-const PostCardContainer: React.FC<PostCardContainerProps> = ({ postCards }) => {
+const PostCardContainer: React.FC<{ postCards: PostCardProps[] }> = ({
+  postCards,
+}) => {
   return (
     <div className="flex-grow space-y-4">
       {postCards.map((post) => (

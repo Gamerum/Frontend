@@ -6,4 +6,12 @@ const ScrollableContext = createContext<React.RefObject<HTMLElement> | null>(
 
 export const ScrollableProvider = ScrollableContext.Provider;
 
-export const useScrollableContext = () => useContext(ScrollableContext);
+export const useScrollableContext = () => {
+  const context = useContext(ScrollableContext);
+  if (!context) {
+    throw new Error(
+      'useScrollableContext must be used within a ScrollableProvider'
+    );
+  }
+  return context;
+};
