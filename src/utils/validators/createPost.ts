@@ -4,7 +4,9 @@ const createPostValidator = () => {
   return yup.object().shape({
     username: yup
       .string()
-      .min(10, 'Post title must be min 10 character')
+      .min(5, 'Post title must be min 5 character')
       .required('You must enter a title'),
   });
 };
+
+export default createPostValidator;
