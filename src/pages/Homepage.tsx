@@ -1,7 +1,7 @@
 import React from 'react';
 import LeftSidebar from '../layout/LeftSidebar';
-import MainContent from '../layout/MainContent';
-import RightSidebar from '../layout/RightSidebar';
+import MainContent from '../layout/homepage/MainContent';
+import RightSidebar from '../layout/homepage/RightSidebar';
 
 const HomePage: React.FC = () => {
   return (
